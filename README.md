@@ -3,7 +3,7 @@
 A fully interactive, story‑driven birthday web experience built with **React**, **Three.js**, **GSAP**, and a whole lot of love.  
 She’ll type a secret code, blow out a 3D cake through the microphone, and unwrap memories, songs, and messages made just for her.
 
-![Birthday preview](https://img.shields.io/badge/status-deployed-success) <!-- you can replace with a real badge or an image -->
+![Birthday preview](https://girl-friend-birthday-website.vercel.app) <!-- you can replace with a real badge or an image -->
 
 ---
 
