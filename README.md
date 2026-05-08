@@ -4,10 +4,10 @@ A fully interactive, story‑driven birthday web experience built with **React**
 She’ll type a secret code, blow out a 3D cake through the microphone, and unwrap memories, songs, and messages made just for her.
 
 🌐 **Live site → [https://girl-friend-birthday-website.vercel.app](https://girl-friend-birthday-website.vercel.app)**  
-*(replace with your actual Vercel URL)*
+
 
 ![Live status](https://img.shields.io/badge/live-vercel-success?logo=vercel)  
-*(If you want a dynamic badge, you can use [shields.io](https://shields.io) with your Vercel deployment badge.)*
+
 
 ---
 
