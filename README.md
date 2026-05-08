@@ -3,7 +3,11 @@
 A fully interactive, story‑driven birthday web experience built with **React**, **Three.js**, **GSAP**, and a whole lot of love.  
 She’ll type a secret code, blow out a 3D cake through the microphone, and unwrap memories, songs, and messages made just for her.
 
-![Birthday preview](https://girl-friend-birthday-website.vercel.app) <!-- you can replace with a real badge or an image -->
+🌐 **Live site → [https://girl-friend-birthday-website.vercel.app](https://girl-friend-birthday-website.vercel.app)**  
+*(replace with your actual Vercel URL)*
+
+![Live status](https://img.shields.io/badge/live-vercel-success?logo=vercel)  
+*(If you want a dynamic badge, you can use [shields.io](https://shields.io) with your Vercel deployment badge.)*
 
 ---
 
