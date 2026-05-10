@@ -35,7 +35,7 @@ export default function LockScreen({ active, onBack }) {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 z-50 overflow-y-auto bg-white flex flex-col items-center px-4 py-6"
+      className="absolute inset-0 z-50 overflow-y-auto bg-white flex items-center justify-center px-4 py-6"
     >
       <div className="w-full max-w-2xl flex flex-col items-center">
         {/* 1. Header */}
@@ -98,7 +98,7 @@ export default function LockScreen({ active, onBack }) {
         <button
           onClick={handleReturn}
           className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold border-2 border-red-600 text-red-600 bg-white
-                     hover:bg-red-50 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md"
+                   hover:bg-red-50 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md"
           style={{
             fontFamily: "'Montserrat', sans-serif",
             fontSize: "clamp(0.9rem, 3vw, 1.3rem)",

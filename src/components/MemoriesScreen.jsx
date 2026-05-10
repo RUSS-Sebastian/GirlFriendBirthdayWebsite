@@ -83,10 +83,7 @@ export default function MemoriesScreen({ active, onBack }) {
     <div
       ref={containerRef}
       className="absolute inset-0 z-50 overflow-y-auto"
-      style={{
-        background:
-          "linear-gradient(180deg, #FFFDF5 0%, #FFF9E6 40%, #FFF5E1 100%)",
-      }}
+      style={{ backgroundColor: "#FFFFFF" }}
     >
       {/* 1. Header */}
       <div
