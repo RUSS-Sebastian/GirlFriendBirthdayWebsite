@@ -73,7 +73,7 @@ export default function MemoriesScreen({ active, onBack }) {
         className="hide-scrollbar"
         style={{
           overflowX: "auto",
-          overflowY: "hidden",
+          overflowY: "auto",
           width: "100%",
           height: "120vh", // tall, so vertical scroll works for the whole page
         }}
