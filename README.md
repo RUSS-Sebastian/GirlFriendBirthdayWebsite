@@ -1,16 +1,60 @@
-# React + Vite
+# 💌 A Birthday Surprise for the One Who Has My Heart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully interactive, story‑driven birthday web experience built with **React**, **Three.js**, **GSAP**, and a whole lot of love.  
+She’ll type a secret code, blow out a 3D cake through the microphone, and unwrap memories, songs, and messages made just for her.
 
-Currently, two official plugins are available:
+🌐 **Live site → [https://girl-friend-birthday-website.vercel.app](https://girl-friend-birthday-website.vercel.app)**  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+![Live status](https://img.shields.io/badge/live-vercel-success?logo=vercel)  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ What’s inside
+
+- 💬 **Typewriter storytelling** – romantic lines appear one after another.
+- 🔐 **Secret passcode** – the right PIN unlocks everything.
+- 🎥 **Cinematic video reveal** – the screen turns black, then a personal video plays.
+- 🎂 **3D cake with candles** – she literally blows into the microphone to extinguish them.
+- 🎉 **Celebration storm** – balloons, hearts, confetti, and sparkles.
+- 🎁 **Gift cards** – four interactive cards lead to dedicated pages:
+  - 🖼️ **Memories** – a wood‑toned gallery with scrolling photos.
+  - 📝 **Message** – a full love letter in Burmese and English.
+  - 🔒 **Song** – an embedded YouTube video (“You & I – One Direction”).
+  - 💐 **Bouquet** – a beautifully presented floral message.
+- 📱 **Phone rotation hint** and touch‑friendly navigation.
+- 💖 **Romantic QR code** ready – just generate from the live link.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer         | Tools                                                         |
+| ------------- | ------------------------------------------------------------- |
+| Frontend      | React, Vite, Tailwind CSS (with custom theme)                |
+| Animations    | GSAP (GreenSock)                                              |
+| 3D            | Three.js, React Three Fiber, @react-three/drei               |
+| Audio         | Web Audio API (microphone blow detection)                    |
+| Fonts         | Playfair Display, Montserrat, Cormorant Garamond (self‑hosted)|
+| Hosting       | Vercel (recommended) or Netlify                              |
+| QR Code       | QRCode Monkey or any QR generator                            |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** (v16 or higher)
+- **npm** (v8 or higher)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/birthday-pj.git
+cd birthday-pj
+
+# Install dependencies
+npm install
