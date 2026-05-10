@@ -68,7 +68,9 @@ export default function GiftsScreen({
       className="absolute inset-0 flex flex-col items-center justify-center px-4 overflow-visible"
       style={{ backgroundColor: "#FFFDD0" }}
     >
-      <div className="flex flex-col items-center justify-center w-full max-w-[85vw] sm:max-w-sm">
+      {/* Content wrapper – fills available width but never exceeds 24rem */}
+      <div className="flex flex-col items-center justify-center w-full max-w-sm">
+        {/* Heading */}
         <h1
           ref={headingRef}
           className="font-bold text-center mb-2"
@@ -81,9 +83,10 @@ export default function GiftsScreen({
           THESE ARE FOR YOU!
         </h1>
 
+        {/* Subtext */}
         <p
           ref={subtextRef}
-          className="text-center font-medium mb-5 sm:mb-6"
+          className="text-center font-medium mb-5"
           style={{
             fontFamily: "'Montserrat', sans-serif",
             color: "#ff0000",
@@ -93,7 +96,8 @@ export default function GiftsScreen({
           I hope you like it. I love you &gt;&lt;
         </p>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full overflow-visible">
+        {/* Cards grid – always 2 columns, comfortable gap */}
+        <div className="grid grid-cols-2 gap-3 w-full overflow-visible">
           {icons.map((icon, i) => (
             <div
               key={i}
@@ -104,7 +108,7 @@ export default function GiftsScreen({
                 else if (i === 2 && onLockClick) onLockClick();
                 else if (i === 3 && onMessageClick) onMessageClick();
               }}
-              className="aspect-square rounded-2xl border-[3px] flex items-center justify-center p-1 sm:p-1.5 bg-white
+              className="aspect-square rounded-2xl border-[3px] flex items-center justify-center p-2 bg-white
                          cursor-pointer active:scale-95 transition-transform"
               style={{
                 borderColor: "#ff0000",
@@ -114,7 +118,7 @@ export default function GiftsScreen({
               <img
                 src={icon.src}
                 alt={icon.alt}
-                className="w-1/3 h-1/3 object-contain"
+                className="w-2/5 h-2/5 object-contain"
               />
             </div>
           ))}

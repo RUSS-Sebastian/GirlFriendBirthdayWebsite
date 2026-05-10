@@ -75,16 +75,16 @@ export default function MemoriesScreen({ active, onBack }) {
           overflowX: "auto",
           overflowY: "hidden",
           width: "100%",
-          height: "120vh", // tall, so vertical scroll works for the whole page
+          height: "120vh", // still tall so vertical scrolling works for the whole page
         }}
       >
-        <div
+        <img
+          src={woodBg}
+          alt="Our memories"
           style={{
-            minWidth: "1200px", // wider than most screens, forces horizontal scroll
             height: "100%",
-            backgroundImage: `url(${woodBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            width: "auto", // keeps aspect ratio, full image width is rendered
+            display: "block", // removes any inline gaps
           }}
         />
       </div>

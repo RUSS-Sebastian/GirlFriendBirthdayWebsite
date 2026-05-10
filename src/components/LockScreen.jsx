@@ -38,18 +38,18 @@ export default function LockScreen({ active, onBack }) {
       className="absolute inset-0 z-50 overflow-y-auto bg-white flex flex-col items-center px-4 py-6"
     >
       <div className="w-full max-w-2xl flex flex-col items-center">
-        {/* 1. Header text at the top */}
+        {/* 1. Header */}
         <p
-          className="text-center font-medium text-red-600 mb-6"
+          className="text-center font-medium text-red-600 mb-4 sm:mb-6"
           style={{
             fontFamily: "'Montserrat', sans-serif",
-            fontSize: "clamp(1rem, 3vw, 1.4rem)",
+            fontSize: "clamp(0.9rem, 3vw, 1.4rem)",
           }}
         >
           This song reminds me of you (˶˃ ᵕ ˂˶)
         </p>
 
-        {/* 2. YouTube video – responsive container */}
+        {/* 2. YouTube video – already responsive */}
         <div
           className="w-full max-w-[560px] mb-4"
           style={{ aspectRatio: "16/9" }}
@@ -69,25 +69,25 @@ export default function LockScreen({ active, onBack }) {
 
         {/* 3. Song title */}
         <p
-          className="text-center font-semibold text-red-600 mb-6"
+          className="text-center font-semibold text-red-600 mb-4 sm:mb-6"
           style={{
             fontFamily: "'Montserrat', sans-serif",
-            fontSize: "clamp(0.95rem, 2.5vw, 1.2rem)",
+            fontSize: "clamp(0.85rem, 2.5vw, 1.2rem)",
           }}
         >
           ထူးအယ်လင်း - မင်းလေးနားလည်
         </p>
 
-        {/* 4. Dotted line – red, full width of container */}
-        <div className="w-full h-0 border-t-4 border-dotted border-red-600 mb-6 opacity-80" />
+        {/* 4. Dotted line */}
+        <div className="w-full h-0 border-t-4 border-dotted border-red-600 mb-4 sm:mb-6 opacity-80" />
 
         {/* 5. Biggest header */}
         <h1
-          className="text-center font-bold mb-8"
+          className="text-center font-bold mb-6 sm:mb-8"
           style={{
             fontFamily: "'Playfair Display', serif",
             color: "#FF0000",
-            fontSize: "clamp(2.2rem, 8vw, 4rem)",
+            fontSize: "clamp(2rem, 8vw, 4rem)",
             lineHeight: 1.2,
           }}
         >
@@ -97,11 +97,11 @@ export default function LockScreen({ active, onBack }) {
         {/* 6. Return button */}
         <button
           onClick={handleReturn}
-          className="px-8 py-3 rounded-full font-bold border-2 border-red-600 text-red-600 bg-white
+          className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold border-2 border-red-600 text-red-600 bg-white
                      hover:bg-red-50 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md"
           style={{
             fontFamily: "'Montserrat', sans-serif",
-            fontSize: "clamp(1rem, 3vw, 1.3rem)",
+            fontSize: "clamp(0.9rem, 3vw, 1.3rem)",
           }}
         >
           Return

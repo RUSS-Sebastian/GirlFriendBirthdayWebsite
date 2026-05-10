@@ -76,14 +76,14 @@ export default function BirthdayCelebration() {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-50 flex flex-col items-center justify-center overflow-hidden px-4 mt-8 sm:mt-12">
+    <div className="absolute inset-0 z-50 flex flex-col items-center justify-center overflow-hidden px-4 mt-4 sm:mt-8">
       {/* Confetti layer */}
       <div
         ref={confettiContainerRef}
         className="absolute inset-0 pointer-events-none"
       />
 
-      {/* Rainbow curved text – wider viewBox to prevent clipping */}
+      {/* Rainbow curved text – already responsive via w-[95%] max-w-4xl */}
       <svg
         ref={svgRef}
         viewBox="0 0 900 280"
@@ -110,12 +110,12 @@ export default function BirthdayCelebration() {
         </text>
       </svg>
 
-      {/* Sticker – smaller */}
+      {/* Sticker – scales down gracefully on small screens */}
       <img
         ref={stickerRef}
         src={celebrateSticker}
         alt="Celebrate"
-        className="w-48 h-48 sm:w-56 sm:h-56 object-contain"
+        className="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain"
         style={{ opacity: 0 }}
       />
     </div>

@@ -113,46 +113,50 @@ export default function BlowCake() {
       className="absolute inset-0 z-50 flex items-center justify-center px-4"
       style={{ backgroundColor: "#FFFDD0" }}
     >
-      <div className="max-w-md w-full bg-white/60 backdrop-blur-md rounded-3xl shadow-2xl p-8 text-center border border-white/40">
+      <div className="w-full max-w-sm bg-white/60 backdrop-blur-md rounded-3xl shadow-2xl p-6 text-center border border-white/40">
         {/* Heading */}
         <h2
-          className="text-2xl sm:text-3xl font-bold mb-2"
-          style={{ fontFamily: "'Montserrat', sans-serif", color: "#ff0000" }}
+          className="font-bold mb-2"
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            color: "#ff0000",
+            fontSize: "clamp(1.5rem, 6vw, 2.2rem)",
+          }}
         >
           Here is my cake for you 🎂
         </h2>
         <p
-          className="text-lg sm:text-xl text-pink-600 mb-6"
-          style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600 }}
+          className="mb-6"
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 600,
+            color: "#ff0000",
+            fontSize: "clamp(0.9rem, 3.5vw, 1.2rem)",
+          }}
         >
           Blow out the candle baby! 🤩
         </p>
 
-        {/* Cake */}
-        <div className="flex flex-col items-center mb-8">
-          <div className="relative">
+        {/* Cake – all sizes relative to container width */}
+        <div className="flex flex-col items-center mb-6">
+          <div className="relative w-full max-w-[280px] mx-auto">
             {/* Candle group */}
-            <div className="flex justify-center gap-4 mb-1">
+            <div className="flex justify-center gap-3 mb-1">
               {candles.map((lit, i) => (
                 <div key={i} className="relative flex flex-col items-center">
                   <Flame lit={lit} />
-                  <div className="w-2 h-10 bg-pink-400 rounded-sm shadow-sm" />
+                  <div className="w-2 h-8 sm:h-10 bg-pink-400 rounded-sm shadow-sm" />
                 </div>
               ))}
             </div>
 
-            {/* Top layer (small) */}
-            <div className="w-32 h-10 bg-amber-900 rounded-t-lg mx-auto shadow-inner" />
-            {/* Cream layer */}
-            <div className="w-36 h-3 bg-white rounded-lg mx-auto -mt-1 shadow" />
-            {/* Middle layer */}
-            <div className="w-40 h-10 bg-amber-800 mx-auto shadow-inner" />
-            {/* Cream layer */}
-            <div className="w-44 h-3 bg-white rounded-lg mx-auto -mt-1 shadow" />
-            {/* Bottom layer */}
-            <div className="w-48 h-10 bg-amber-900 rounded-b-lg mx-auto shadow-inner" />
-            {/* Plate */}
-            <div className="w-56 h-2 bg-gray-300 rounded-full mx-auto mt-1 shadow-lg" />
+            {/* Cake layers – widths as percentages of the container */}
+            <div className="w-4/5 h-10 bg-amber-900 rounded-t-lg mx-auto shadow-inner" />
+            <div className="w-[88%] h-3 bg-white rounded-lg mx-auto -mt-1 shadow" />
+            <div className="w-[95%] h-10 bg-amber-800 mx-auto shadow-inner" />
+            <div className="w-full h-3 bg-white rounded-lg mx-auto -mt-1 shadow" />
+            <div className="w-full h-10 bg-amber-900 rounded-b-lg mx-auto shadow-inner" />
+            <div className="w-[110%] h-2 bg-gray-300 rounded-full mx-auto mt-1 shadow-lg" />
           </div>
         </div>
 
@@ -164,15 +168,18 @@ export default function BlowCake() {
             className="px-8 py-3 rounded-full font-bold text-white bg-red-500 hover:bg-red-600 shadow-lg transform transition-all duration-300 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
             style={{
               fontFamily: "'Montserrat', sans-serif",
-              fontSize: "1.1rem",
+              fontSize: "clamp(0.9rem, 3vw, 1.1rem)",
             }}
           >
             {micRequested ? "🔊 Listening... Blow now!" : "Tap to Blow"}
           </button>
         ) : (
           <p
-            className="text-red-600 font-bold text-xl"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            className="text-red-600 font-bold"
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: "clamp(1rem, 3.5vw, 1.4rem)",
+            }}
           >
             🎉 You did it! Happy Birthday!
           </p>

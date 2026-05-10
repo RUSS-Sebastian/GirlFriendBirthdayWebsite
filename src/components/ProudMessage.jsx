@@ -25,15 +25,15 @@ export default function ProudMessage() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 flex items-center justify-center px-8"
+      className="absolute inset-0 flex items-center justify-center px-4 sm:px-8"
       style={{
         backgroundColor: "#FFFDD0",
         fontFamily: "'Montserrat', sans-serif",
       }}
     >
-      <div className="flex w-full max-w-5xl items-center">
+      <div className="flex flex-col md:flex-row items-center w-full max-w-5xl gap-6 md:gap-10">
         {/* Left half – text */}
-        <div className="w-1/2 pr-6">
+        <div className="w-full md:w-1/2 text-center md:text-left">
           <h2
             className="font-bold leading-tight whitespace-pre-line"
             style={{
@@ -48,12 +48,12 @@ export default function ProudMessage() {
         </div>
 
         {/* Right half – sticker */}
-        <div className="w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center">
           <img
             ref={stickerRef}
             src={shySticker}
             alt="Shy"
-            className="w-64 h-64 sm:w-80 sm:h-80 object-contain"
+            className="w-3/4 max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px] h-auto object-contain"
           />
         </div>
       </div>

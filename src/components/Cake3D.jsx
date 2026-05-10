@@ -407,27 +407,38 @@ export default function Cake3D({ onNext }) {
       className="absolute inset-0 z-50 flex flex-col items-center justify-between"
       style={{ backgroundColor: "#FFFDD0" }}
     >
-      {/* Header */}
-      <div className="w-full text-center pt-8 sm:pt-10">
+      {/* Header – fully responsive text */}
+      <div className="w-full text-center pt-6 pb-2">
         <h2
-          className="text-xl sm:text-2xl font-bold mb-1"
-          style={{ fontFamily: "'Montserrat', sans-serif", color: "#ff0000" }}
+          className="font-bold mb-1"
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            color: "#ff0000",
+            fontSize: "clamp(1.3rem, 5vw, 2.2rem)",
+          }}
         >
           Here is my cake for you 🎂
         </h2>
         <p
-          className="text-base sm:text-lg text-pink-600 font-semibold"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          className="font-semibold"
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            color: "#db2777",
+            fontSize: "clamp(0.9rem, 3.5vw, 1.3rem)",
+          }}
         >
           Blow out the candles, baby! 🤩
         </p>
       </div>
 
-      {/* 3D cake container */}
-      <div className="w-full h-[55vh] sm:h-[60vh] max-h-[500px] flex-shrink-0">
+      {/* 3D cake container – height scales with viewport */}
+      <div className="w-full h-[55vh] max-h-[500px] flex-shrink-0">
         <Suspense
           fallback={
-            <div className="h-full flex items-center justify-center text-red-500">
+            <div
+              className="h-full flex items-center justify-center text-red-500"
+              style={{ fontSize: "clamp(1rem, 4vw, 1.5rem)" }}
+            >
               Loading cake...
             </div>
           }
@@ -446,24 +457,27 @@ export default function Cake3D({ onNext }) {
         </Suspense>
       </div>
 
-      {/* Button area */}
-      <div className="w-full text-center pb-8 sm:pb-10">
+      {/* Button area – fully responsive spacing and text */}
+      <div className="w-full text-center pb-6">
         {!allOut ? (
           <button
             onClick={() => setMicRequested(true)}
             disabled={micRequested}
-            className="px-8 py-3 rounded-full font-bold text-white bg-red-500 hover:bg-red-600 shadow-xl transform transition-all duration-300 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-6 py-3 rounded-full font-bold text-white bg-red-500 hover:bg-red-600 shadow-xl transform transition-all duration-300 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
             style={{
               fontFamily: "'Montserrat', sans-serif",
-              fontSize: "1.1rem",
+              fontSize: "clamp(0.9rem, 3vw, 1.1rem)",
             }}
           >
             {micRequested ? "🔊 Listening... Blow now!" : "🎤 Tap to Blow"}
           </button>
         ) : (
           <p
-            className="text-red-600 font-bold text-xl"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            className="text-red-600 font-bold"
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: "clamp(1rem, 3.5vw, 1.4rem)",
+            }}
           >
             🎉 Happy Birthday, baby girl!
           </p>
@@ -477,7 +491,7 @@ export default function Cake3D({ onNext }) {
         style={{ zIndex: 5 }}
       />
 
-      {/* Final pop‑up after celebration */}
+      {/* Final pop‑up after celebration – responsive text & button */}
       {showPopup && (
         <div
           ref={popupRef}
@@ -500,7 +514,7 @@ export default function Cake3D({ onNext }) {
             className="px-8 py-3 rounded-full font-bold bg-white text-red-600 shadow-xl transform transition-transform duration-300 hover:scale-105 active:scale-95"
             style={{
               fontFamily: "'Montserrat', sans-serif",
-              fontSize: "1.2rem",
+              fontSize: "clamp(1rem, 3.5vw, 1.2rem)",
             }}
           >
             Let's go
