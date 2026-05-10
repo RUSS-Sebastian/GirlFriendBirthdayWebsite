@@ -66,10 +66,12 @@ export default function TypewriterSequence({ refs, onSuccess, onVideoEnd }) {
     leftContentRef,
   } = refs;
 
+  // Refined, fully responsive heading style
   const headingStyle = {
     fontFamily: "'Playfair Display', serif",
     color: "#FF0000",
-    fontSize: "clamp(2.5rem, 10vw, 8rem)",
+    fontSize: "clamp(2rem, 8vw, 6rem)", // softer scaling across all widths
+    lineHeight: 1.2,
     fontFeatureSettings: '"liga" 0',
     fontVariantLigatures: "none",
   };
@@ -150,7 +152,7 @@ export default function TypewriterSequence({ refs, onSuccess, onVideoEnd }) {
   useEffect(() => {
     if (isSuccess && videoRef.current) {
       const video = videoRef.current;
-      video.muted = true; // start muted to allow autoplay
+      video.muted = true;
       video.play().catch(console.warn);
     }
   }, [isSuccess]);
@@ -163,7 +165,7 @@ export default function TypewriterSequence({ refs, onSuccess, onVideoEnd }) {
         onComplete: () => {
           setVideoVisible(true);
           if (onSuccess) onSuccess(); // remove background, cream → black
-          video.muted = false; // audio on now
+          video.muted = false; // audio now on
         },
       });
       if (blobContainerRef.current) {
@@ -180,7 +182,7 @@ export default function TypewriterSequence({ refs, onSuccess, onVideoEnd }) {
   // --- Password submit ---
   const handlePasswordSubmit = (password) => {
     if (password === "1027") {
-      setIsSuccess(true); // only triggers state change, DOM updates next
+      setIsSuccess(true);
     } else {
       setWrongPassword(true);
     }
@@ -204,11 +206,9 @@ export default function TypewriterSequence({ refs, onSuccess, onVideoEnd }) {
 
   // --- Video ended → cream ---
   const handleVideoEnded = () => {
-    console.log("Video ended event fired");
     if (onVideoEnd) onVideoEnd();
   };
 
-  // ========== RENDER ==========
   return (
     <>
       {/* ---- Typewriter ---- */}
@@ -245,9 +245,10 @@ export default function TypewriterSequence({ refs, onSuccess, onVideoEnd }) {
         ref={overlayRef}
         className="absolute inset-0 z-20 opacity-0 pointer-events-none"
       >
+        {/* Left panel – scrollable if content overflows */}
         <div
           ref={leftPanelRef}
-          className="absolute left-0 top-0 h-full w-1/2 flex items-center justify-center"
+          className="absolute left-0 top-0 h-full w-1/2 flex items-center justify-center overflow-y-auto min-h-0"
           style={{ backgroundColor: "#FF0000" }}
         >
           <div
@@ -271,9 +272,11 @@ export default function TypewriterSequence({ refs, onSuccess, onVideoEnd }) {
             </p>
           </div>
         </div>
+
+        {/* Right panel – scrollable if keypad overflows */}
         <div
           ref={rightPanelRef}
-          className="absolute right-0 top-0 h-full w-1/2 flex items-center justify-center p-4"
+          className="absolute right-0 top-0 h-full w-1/2 flex items-center justify-center p-4 overflow-y-auto min-h-0"
           style={{ backgroundColor: "#FFFDD0" }}
         >
           <div ref={keypadRef} className="opacity-0 scale-0">
