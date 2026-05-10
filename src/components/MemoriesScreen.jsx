@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import woodBg from "../assets/images/memory.jpg";
+import woodBg from "../assets/images/memory.png";
 
 export default function MemoriesScreen({ active, onBack }) {
   const containerRef = useRef(null);
@@ -46,9 +46,9 @@ export default function MemoriesScreen({ active, onBack }) {
     <div
       ref={containerRef}
       className="absolute inset-0 z-50 overflow-y-auto"
-      style={{ backgroundColor: "#FFF" }}
+      style={{ backgroundColor: "#FFFFFF" }}
     >
-      {/* 1. Heading – fixed width, not scrolling horizontally */}
+      {/* 1. Heading – exactly 20% of the viewport height */}
       <div
         className="w-full flex items-center justify-center"
         style={{ height: "20vh", backgroundColor: "#FFFFFF" }}
@@ -75,21 +75,21 @@ export default function MemoriesScreen({ active, onBack }) {
           overflowX: "auto",
           overflowY: "hidden",
           width: "100%",
-          height: "120vh", // still tall so vertical scrolling works for the whole page
+          height: "120vh", // tall, so vertical scroll works for the whole page
         }}
       >
-        <img
-          src={woodBg}
-          alt="Our memories"
+        <div
           style={{
+            minWidth: "1300px", // wider than most screens, forces horizontal scroll
             height: "100%",
-            width: "auto", // keeps aspect ratio, full image width is rendered
-            display: "block", // removes any inline gaps
+            backgroundImage: `url(${woodBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         />
       </div>
 
-      {/* 3. Return section – fixed in place */}
+      {/* 3. Return section – exactly 20% of the viewport height */}
       <div
         className="w-full flex items-center justify-center cursor-pointer active:scale-95 transition-transform"
         style={{ height: "20vh", backgroundColor: "#FFFFFF" }}
@@ -109,7 +109,7 @@ export default function MemoriesScreen({ active, onBack }) {
         </p>
       </div>
 
-      {/* Hide scrollbars globally */}
+      {/* Hidden scrollbar */}
       <style>{`
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
